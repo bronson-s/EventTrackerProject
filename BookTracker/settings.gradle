@@ -1,0 +1,2 @@
+rootProject.name = 'BookTracker'
+includeFlat 'JPABook'
