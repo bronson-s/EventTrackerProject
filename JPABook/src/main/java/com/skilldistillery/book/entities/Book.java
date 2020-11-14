@@ -1,5 +1,6 @@
 package com.skilldistillery.book.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,29 +12,130 @@ public class Book {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 private String title;
+private String author;
+@Column(name="published_year")
+private Integer publishedYear;
+private String description;
+@Column(name="cover_url")
+private String coverUrl;
+@Column(name="author_url")
+private String authorUrl;
+@Column(name="page_count")
+private Integer pageCount;
+private String genre;
+private String publisher;
 
 
-public Book(int id, String title) {
-	super();
-	this.id = id;
-	this.title = title;
-}
 public Book() {
 	super();
+}
+
+
+@Override
+public String toString() {
+	return "Book [id=" + id + ", title=" + title + ", author=" + author + ", publishedYear=" + publishedYear
+			+ ", description=" + description + ", coverUrl=" + coverUrl + ", authorUrl=" + authorUrl + ", pageCount="
+			+ pageCount + ", genre=" + genre + ", publisher=" + publisher + "]";
 }
 
 
 public int getId() {
 	return id;
 }
+
+
 public void setId(int id) {
 	this.id = id;
 }
+
+
 public String getTitle() {
 	return title;
 }
+
+
 public void setTitle(String title) {
 	this.title = title;
+}
+
+
+public String getAuthor() {
+	return author;
+}
+
+
+public void setAuthor(String author) {
+	this.author = author;
+}
+
+
+public Integer getPublishedYear() {
+	return publishedYear;
+}
+
+
+public void setPublishedYear(Integer publishedYear) {
+	this.publishedYear = publishedYear;
+}
+
+
+public String getDescription() {
+	return description;
+}
+
+
+public void setDescription(String description) {
+	this.description = description;
+}
+
+
+public String getCoverUrl() {
+	return coverUrl;
+}
+
+
+public void setCoverUrl(String coverUrl) {
+	this.coverUrl = coverUrl;
+}
+
+
+public String getAuthorUrl() {
+	return authorUrl;
+}
+
+
+public void setAuthorUrl(String authorUrl) {
+	this.authorUrl = authorUrl;
+}
+
+
+public Integer getPageCount() {
+	return pageCount;
+}
+
+
+public void setPageCount(Integer pageCount) {
+	this.pageCount = pageCount;
+}
+
+
+public String getGenre() {
+	return genre;
+}
+
+
+public void setGenre(String genre) {
+	this.genre = genre;
+}
+
+
+public String getPublisher() {
+	return publisher;
+}
+
+
+public void setPublisher(String publisher) {
+	this.publisher = publisher;
 }
 
 
@@ -44,6 +146,8 @@ public int hashCode() {
 	result = prime * result + id;
 	return result;
 }
+
+
 @Override
 public boolean equals(Object obj) {
 	if (this == obj)
@@ -57,11 +161,5 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
-
-
-
-@Override
-public String toString() {
-	return "Book [id=" + id + ", title=" + title + "]";
 }
-}
+
