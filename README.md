@@ -7,20 +7,16 @@ Students were asked to create the back end of a web application to be used again
 
 ### Topics
 * Spring Data JPA
-* 
 * RESTful Services
+* Postman
+* AWS
 
+### Lessons Learned
+This project solidified my knowledge of how to configure a Spring Data JPA framework and interact with a database RESTfully.
 
-
-
-
-
-
-
-
-
-
-
+### How to Run
+Direct your browser to http://3.20.48.96:8080/BookTracker
+and append one of the the get routes listed below.
 
 ### Expected Routes
 | Return Type   | Route                 | Functionality                  |

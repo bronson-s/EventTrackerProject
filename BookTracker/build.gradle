@@ -6,8 +6,8 @@ plugins {
 apply plugin: 'war'
 war {
   enabled = true
-  archiveName = "${'BookTracker'}.war"     // Our app name, as defined in settings.gradle
-  destinationDir = file("./")      // project root directory
+  archiveName = "${baseName}.war"     // Our app name, as defined in settings.gradle
+  destinationDir = file("../")      // project root directory
 }
 
 group = 'com.example'
