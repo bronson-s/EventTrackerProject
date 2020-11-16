@@ -38,6 +38,9 @@ public class BookServiceImpl implements BookService {
 		if (bookOpt.isPresent()) {
 			managedBook = bookOpt.get();
 		}
+		if(book.getTitle() != null) {
+			managedBook.setTitle(book.getTitle());
+		}
 		if (book.getAuthor() != null) {
 			managedBook.setAuthor(book.getAuthor());
 		}
