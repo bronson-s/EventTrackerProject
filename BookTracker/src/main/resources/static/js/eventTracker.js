@@ -11,6 +11,10 @@ document.goHome.home.addEventListener('click', function (e) {
         e.preventDefault();
         getBooks();
     });
+document.totalLibrary.total.addEventListener('click', function (e) {
+        e.preventDefault();
+        getBooksTotal();
+    });
 
 
 }
@@ -62,6 +66,36 @@ function getBooks() {
 
     }
     xhr.send();
+};
+function getBooksTotal() {
+    let formDiv = document.getElementById('formDiv');
+    formDiv.textContent = "";
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'api/books');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                let books = JSON.parse(xhr.responseText);
+                console.log(books)
+                totalBooks(books);
+            } else {
+                displayError('books unable to load');
+            }
+        }
+
+    }
+    xhr.send();
+};
+function totalBooks(books){
+    var booksDiv = document.getElementById('books');
+    booksDiv.textContent = "";
+    var total = 0;
+    for(let i = 0; i < books.length; i++){
+
+    total += books[i].copies;
+}
+console.log(total)
+booksDiv.textContent = 'Total books in library = ' +total;
 };
 function displayError(msg) {
     let div = document.getElementById('books');
@@ -130,6 +164,9 @@ function displayBook(book){
     let genre = document.createElement('li');
     genre.textContent = 'Genre: ' + book.genre;
     ul.appendChild(genre);
+    let copies = document.createElement('li');
+    copies.textContent = 'Number of copies: ' + book.copies;
+    ul.appendChild(copies);
 
     updateForm(book);
     let deletebtn = document.createElement('button')

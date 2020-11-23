@@ -24,7 +24,7 @@ private String authorUrl;
 private Integer pageCount;
 private String genre;
 private String publisher;
-
+private Integer copies;
 
 public Book() {
 	super();
@@ -35,7 +35,7 @@ public Book() {
 public String toString() {
 	return "Book [id=" + id + ", title=" + title + ", author=" + author + ", publishedYear=" + publishedYear
 			+ ", description=" + description + ", coverUrl=" + coverUrl + ", authorUrl=" + authorUrl + ", pageCount="
-			+ pageCount + ", genre=" + genre + ", publisher=" + publisher + "]";
+			+ pageCount + ", genre=" + genre + ", publisher=" + publisher + ", copies=" + copies + "]";
 }
 
 
@@ -160,6 +160,16 @@ public boolean equals(Object obj) {
 	if (id != other.id)
 		return false;
 	return true;
+}
+
+
+public Integer getCopies() {
+	return copies;
+}
+
+
+public void setCopies(Integer copies) {
+	this.copies = copies;
 }
 }
 

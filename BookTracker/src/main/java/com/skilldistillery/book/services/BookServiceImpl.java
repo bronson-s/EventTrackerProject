@@ -65,6 +65,9 @@ public class BookServiceImpl implements BookService {
 		if (book.getPublisher() != null) {
 			managedBook.setPublisher(book.getPublisher());
 		}
+		if (book.getCopies() != null) {
+			managedBook.setCopies(book.getCopies());
+		}
 		bookRepo.flush();
 
 		return managedBook;
@@ -72,6 +75,9 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public Book createBook(Book book) {
+		if (book.getCopies() == null) {
+			book.setCopies(1);
+		}
 		bookRepo.saveAndFlush(book);
 		return book;
 	}
