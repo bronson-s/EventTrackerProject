@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skilldistillery.book.entities.Book;
 import com.skilldistillery.book.repositories.BookRepository;
 import com.skilldistillery.book.services.BookService;
-
+@CrossOrigin({"*", "http://localhost:4205"})
 @RequestMapping("api")
 @RestController
 public class BookController {
