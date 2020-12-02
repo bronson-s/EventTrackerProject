@@ -1,19 +1,19 @@
-<div *ngIf="!selected" name="header" >
-<h1>Welcome to book tracker</h1>
+<div *ngIf="!selected" class="header"  >
+<h1>Welcome to Virtual Library</h1>
 </div>
 <div name="singleDataDislplay" *ngIf="selected">
   <h3>{{selected.title}}</h3>
   <h4>{{selected.author}}</h4>
   <img src="{{selected.coverUrl}}" alt="book" width="200" height="300">
   <ul>
-    <li>{{selected.id}}</li>
-    <li>{{selected.pageCount}}</li>
-    <li>{{selected.publishedYear}}</li>
-    <li>{{selected.publisher}}</li>
-    <li>{{selected.copies}}</li>
+    <li>ID: {{selected.id}}</li>
+    <li>Page Count: {{selected.pageCount}}</li>
+    <li>Year Published: {{selected.publishedYear}}</li>
+    <li>Publisher: {{selected.publisher}}</li>
+    <li># of Copies in Library: {{selected.copies}}</li>
   </ul>
   <blockquote>{{selected.description}}</blockquote>
-  <button (click)="goBack()">go back</button>
+  <button class="btn btn-outline-primary mb-2 mr-2" (click)="goBack()">go back</button>
   <button class="btn btn-outline-primary mb-2 mr-2" (click)="open(content)">update</button>
   <button class="btn btn-outline-primary mb-2 mr-2" (click)="openDelete(contentDelete, selected)">delete</button>
 
@@ -77,8 +77,8 @@
   <table class="table table-striped table-dark">
     <thead>
       <tr>
-        <td>title</td>
-        <td>author</td>
+        <td>Title</td>
+        <td>Author</td>
       </tr>
     </thead>
     <tbody>

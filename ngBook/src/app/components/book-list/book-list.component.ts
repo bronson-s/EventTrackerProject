@@ -2,7 +2,7 @@ import { BookService } from './../../services/book.service';
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-book-list',
@@ -52,12 +52,9 @@ export class BookListComponent implements OnInit {
       },
       err => console.error('Observer got an error: ' + err)
     );
-
+    window.location.reload();
     this.modalService.dismissAll(); //dismiss the modal
-    this.bookService.index().subscribe(
-      (data) => { this.books = data },
-      (err) => { console.log(err) }
-    )
+
   }
   onUpdate(book) {
     this.bookService.update(this.selected.id, book).subscribe(
