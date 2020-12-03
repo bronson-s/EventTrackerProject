@@ -105,15 +105,21 @@
     <form>
       <input type="text" name="title" placeholder="title" [(ngModel)]="newBook.title" /><br />
       <input type="text" name="author" placeholder="author" [(ngModel)]="newBook.author" /><br />
+      <input type="text" name="publishedYear" placeholder="Published Year" [(ngModel)]="newBook.publishedYear" /><br />
+      <input type="text" name="description" placeholder="description" [(ngModel)]="newBook.description" /><br />
+      <input type="text" name="coverUrl" placeholder="coverUrl" [(ngModel)]="newBook.coverUrl" /><br />
+      <input type="text" name="pageCount" placeholder="pageCount" [(ngModel)]="newBook.pageCount" /><br />
+      <input type="text" name="publisher" placeholder="publisher" [(ngModel)]="newBook.publisher" /><br />
+      <input type="number" name="copies" placeholder="# of copies" [(ngModel)]="newBook.copies" /><br />
+      <div class="border text-center">
+        <button (click)="onSubmit(newBook)" data-dismiss="modal" class="btn btn-info">Submit</button>
+        </div>
     </form>
 
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel click')">cancel</button>
   </div>
-  <div class="border text-center">
-    <button (click)="onSubmit(newBook)" data-dismiss="modal" class="btn btn-info">Submit</button>
-    </div>
 </ng-template>
 
 </div>

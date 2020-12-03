@@ -22,7 +22,7 @@ export class BookListComponent implements OnInit {
   }
   loadBooks(): void {
     this.bookService.index().subscribe(
-      (data) => { this.books = data },
+      data => { this.books = data },
       (err) => { console.log(err) }
     )
   }
@@ -48,11 +48,11 @@ export class BookListComponent implements OnInit {
   onSubmit(book) {
     this.bookService.create(book).subscribe(
       data => {
-        this.loadBooks;
+        this.loadBooks();
       },
       err => console.error('Observer got an error: ' + err)
     );
-    window.location.reload();
+
     this.modalService.dismissAll(); //dismiss the modal
 
   }
@@ -85,13 +85,12 @@ export class BookListComponent implements OnInit {
   onDelete(id) {
     this.bookService.destroy(id).subscribe(
       data => {
-        this.loadBooks;
+        this.loadBooks();
       },
       err => console.error('Observer got an error: ' + err)
     );
     this.modalService.dismissAll();
     this.goBack();
-    this.loadBooks();
   }
 
 }
