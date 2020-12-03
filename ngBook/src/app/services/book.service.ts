@@ -1,15 +1,17 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators'
+import { environment } from 'src/environments/environment';
 import { Book } from '../models/book';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-private baseUrl ='http://localhost:8085/';
-private url = this.baseUrl + 'api/books'
+// private baseUrl ='http://localhost:8085/';
+private url = environment.baseUrl + 'api/books'
 
 index() : Observable<Book[]>{
   return this.http.get<Book[]>(this.url + '?sorted=true')
