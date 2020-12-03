@@ -51,15 +51,16 @@ export class BookListComponent implements OnInit {
         this.loadBooks();
       },
       err => console.error('Observer got an error: ' + err)
-    );
+      );
 
-    this.modalService.dismissAll(); //dismiss the modal
+      this.modalService.dismissAll(); //dismiss the modal
+      this.newBook = new Book();
 
   }
   onUpdate(book) {
     this.bookService.update(this.selected.id, book).subscribe(
       data => {
-        this.loadBooks;
+        this.loadBooks();
       },
       err => console.error('Observer got an error: ' + err)
     );
@@ -68,7 +69,6 @@ export class BookListComponent implements OnInit {
 
 
     this.modalService.dismissAll();
-    this.loadBooks();
   }
   goBack() {
     this.selected = null;
