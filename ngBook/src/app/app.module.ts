@@ -10,6 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AboutComponent } from './components/about/about.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { AboutComponent } from './components/about/about.component';
     BookListComponent,
     NavBarComponent,
     AboutComponent,
+    LogoutComponent,
+    LoginComponent,
+    RegisterComponent,
+    ErrorComponent,
 
   ],
   imports: [
