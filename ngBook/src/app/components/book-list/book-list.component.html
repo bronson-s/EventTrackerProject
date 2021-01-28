@@ -1,6 +1,8 @@
 <div *ngIf="!selected" class="header"  >
 <h1>Welcome to Virtual Library</h1>
 </div>
+
+
 <div name="singleDataDislplay" *ngIf="selected">
   <h3>{{selected.title}}</h3>
   <h4>{{selected.author}}</h4>
@@ -10,7 +12,7 @@
     <li>Page Count: {{selected.pageCount}}</li>
     <li>Year Published: {{selected.publishedYear}}</li>
     <li>Publisher: {{selected.publisher}}</li>
-    <li># of Copies in Library: {{selected.copies}}</li>
+    <!-- <li># of Copies in Library: {{selected.copies}}</li> -->
   </ul>
   <blockquote>{{selected.description}}</blockquote>
   <button class="btn btn-outline-primary mb-2 mr-2" (click)="goBack()">go back</button>
