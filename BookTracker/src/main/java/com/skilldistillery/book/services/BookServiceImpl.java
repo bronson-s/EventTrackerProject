@@ -59,15 +59,15 @@ public class BookServiceImpl implements BookService {
 		if (book.getPageCount() != null) {
 			managedBook.setPageCount(book.getPageCount());
 		}
-		if (book.getGenre() != null) {
-			managedBook.setGenre(book.getGenre());
-		}
-		if (book.getPublisher() != null) {
-			managedBook.setPublisher(book.getPublisher());
-		}
-		if (book.getCopies() != null) {
-			managedBook.setCopies(book.getCopies());
-		}
+//		if (book.getGenre() != null) {
+//			managedBook.setGenre(book.getGenre());
+//		}
+//		if (book.getPublisher() != null) {
+//			managedBook.setPublisher(book.getPublisher());
+//		}
+//		if (book.getCopies() != null) {
+//			managedBook.setCopies(book.getCopies());
+//		}
 		bookRepo.flush();
 
 		return managedBook;
@@ -75,9 +75,9 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public Book createBook(Book book) {
-		if (book.getCopies() == null) {
-			book.setCopies(1);
-		}
+//		if (book.getCopies() == null) {
+//			book.setCopies(1);
+//		}
 		bookRepo.saveAndFlush(book);
 		return book;
 	}

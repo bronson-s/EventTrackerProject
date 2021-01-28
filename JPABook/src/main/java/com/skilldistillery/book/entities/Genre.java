@@ -2,71 +2,48 @@ package com.skilldistillery.book.entities;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
 @Entity
-public class Publisher {
-
+public class Genre {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	private String name;
-	
-	@Column(name="image_url")
-	private String imageUrl;
-	
 	private String description;
 	
-	@OneToMany(mappedBy="publisher")
+	@OneToMany(mappedBy="genre")
 	private List<Book> books;
 	
-
+	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Publisher [id=").append(id).append(", name=").append(name).append(", imageUrl=")
-				.append(imageUrl).append(", description=").append(description).append("]");
+		builder.append("Genre [id=").append(id).append(", name=").append(name).append(", description=")
+				.append(description).append("]");
 		return builder.toString();
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -74,7 +51,6 @@ public class Publisher {
 		result = prime * result + id;
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -83,22 +59,25 @@ public class Publisher {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Publisher other = (Publisher) obj;
+		Genre other = (Genre) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
-
-	public Publisher() {
+	public Genre() {
 		super();
 	}
-
-	public Publisher(int id, String name, String imageUrl, String description) {
+	public Genre(int id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.imageUrl = imageUrl;
 		this.description = description;
+	}
+	public List<Book> getBooks() {
+		return books;
+	}
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 	
 }
