@@ -89,6 +89,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NULL,
   `create_date` DATETIME NULL,
+  `role` VARCHAR(45) NULL,
+  `enabled` TINYINT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -164,7 +166,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `bookeventdb`;
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `create_date`) VALUES (1, 'bronson', 'spies', 'spiesbronson@gmail.com', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `create_date`, `role`, `enabled`) VALUES (1, 'bronson', 'spies', 'spiesbronson@gmail.com', NULL, 'admin', 1);
 
 COMMIT;
 

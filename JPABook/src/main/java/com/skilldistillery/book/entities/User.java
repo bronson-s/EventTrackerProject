@@ -18,10 +18,13 @@ public class User {
 	private String username;
 	private String password;
 	private String email;
+	private String role;
 	
 	@CreationTimestamp
 	@Column (name ="create_date")
 	private LocalDateTime createDate;
+	
+	private boolean enabled;
 
 
 	public int getId() {
@@ -120,6 +123,24 @@ public class User {
 		this.password = password;
 		this.email = email;
 		this.createDate = createDate;
+	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	

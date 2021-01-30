@@ -1,1 +1,9 @@
-<p>login works!</p>
+<div class= "login">
+  <p  style= "font-family: Avenir light; "><strong>NEED AN ACCOUNT? <a class="register" [routerLink]="['/register']"><u>Register</u></a></strong></p>
+
+  <input type="text" [(ngModel)]="user.username" name="username" placeholder="username"><br>
+  <input type="password" [(ngModel)]="user.password" name="password" placeholder="password"><br>
+  <input  class="btn btn-info" type="submit" (click)="login(user)" value="LOGIN">
+
+
+</div>
